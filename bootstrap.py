@@ -8,12 +8,19 @@ subprocess.run(
     ['git', 'clone', 'https://github.com/brulejr/ansible-homelab.git'])
 os.chdir('ansible-homelab')
 
+# Set up defaults
+server_ip = "localhost"
+timezone = "America/New_York"
+username = "sysadm"
+puid = 1000
+pgid = 1000
+
 # Read user input
-server_ip = input("Enter server IP address: ")
-timezone = input("Enter timezone: ")
-username = input("Enter username: ")
-puid = input("Enter puid of the user: ")
-pgid = input("Enter pgid of the user: ")
+server_ip = input(f"Enter server IP address [{server_ip}]: ").strip() or server_ip
+timezone = input(f"Enter timezone [{timezone}]: ").strip() or timezone
+username = input(f"Enter username [{username}]: ").strip() or username
+puid = input(f"Enter puid for the user [{puid}]: ").strip() or puid
+pgid = input(f"Enter pgid for the user [{pgid}]: ").strip() or pgid
 
 # Replace values in vars.yml file
 with open('group_vars/all/vars.yml', 'r') as f:
