@@ -1,0 +1,38 @@
+---
+username: "<username>"
+
+docker_dir: /home/{{ username }}/docker_apps
+data_dir: /home/{{ username }}/data
+
+puid: "<puid>"
+
+pgid: "<pgid>"
+
+ip_address: "<server_ip>"
+
+timezone: "<timezone>"
+
+packages:
+  - unzip
+  - wget
+  - curl
+  - git
+  - python3
+  - python3-pip
+
+pip_packages:
+  - ansible
+  - github3.py
+  - docker
+
+docker_dependencies:
+  - ca-certificates
+  - gnupg
+  - curl
+
+docker_packages:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-buildx-plugin
+  - docker-compose-plugin

@@ -1,0 +1,24 @@
+---
+- name: Setup the homeserver
+  hosts: all
+  remote_user: sysadm  
+  become: true
+
+  tasks:
+    - name: Update server and install essential packages
+      ansible.builtin.include_tasks: tasks/essential.yml
+
+    - name: Install docker
+      ansible.builtin.include_tasks: tasks/docker.yml
+
+    - name: Deploy docker apps
+      ansible.builtin.include_tasks: "tasks/{{ item }}.yml"
+      loop:
+        - portainer
+
+    - name: Modify ownership of data and docker_apps directories
+      ansible.builtin.include_tasks: tasks/add_ownership.yml
+
+    - name: Reboot the server
+      ansible.builtin.reboot:
+        msg: "Rebooting server to finish setup"
