@@ -1,7 +1,6 @@
 ---
 - name: Setup the homeserver
-  hosts: all
-  remote_user: sysadm  
+  hosts: localhost
   become: true
 
   tasks:
