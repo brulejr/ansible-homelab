@@ -31,14 +31,8 @@ with open('inventory', 'r') as f:
     content = f.read()
 content = content.replace('<server_ip>', server_ip)
 content = content.replace('<username>', username)
-if use_password == 'y':
-    ssh_password = input("Enter SSH password: ")
-    content = content.replace(
-        'ansible_ssh_private_key_file = <path/to/private/key>', '')
-    content += f'ansible_ssh_pass = {ssh_password}\n'
-else:
-    private_key_path = input("Enter path to private key: ")
-    content = content.replace('<path/to/private/key>', private_key_path)
+private_key_path = input("Enter path to private key: ")
+content = content.replace('<path/to/private/key>', private_key_path)
 with open('inventory', 'w') as f:
     f.write(content)
 
