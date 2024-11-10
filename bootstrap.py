@@ -6,7 +6,7 @@ import subprocess
 # Clone the repository
 subprocess.run(
     ['git', 'clone', 'https://github.com/brulejr/ansible-homelab.git'])
-os.chdir('ansible_homelab')
+os.chdir('ansible-homelab')
 
 # Read user input
 server_ip = input("Enter server IP address: ")
