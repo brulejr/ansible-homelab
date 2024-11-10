@@ -12,8 +12,8 @@ os.chdir('ansible-homelab')
 server_ip = "localhost"
 timezone = "America/New_York"
 username = "sysadm"
-puid = 1000
-pgid = 1000
+puid = "1000"
+pgid = "1000"
 
 # Read user input
 server_ip = input(f"Enter server IP address [{server_ip}]: ").strip() or server_ip
