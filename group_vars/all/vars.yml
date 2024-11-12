@@ -1,16 +1,22 @@
 ---
 username: "<username>"
 
-docker_dir: /home/{{ username }}/docker_apps
-data_dir: /home/{{ username }}/data
+docker_dir: /opt/homelab/docker_apps
+data_dir: /opt/homelab/data
 
 puid: "<puid>"
 
 pgid: "<pgid>"
 
-ip_address: "<server_ip>"
+server_name: "<server_name>"
 
-timezone: "<timezone>"
+domain: "<domain_name>"
+
+cloudflare_email: "<cloudflare_email>"
+
+cloudflare_api_key: "<cloudflare_api_key>"
+
+traefik_basic_auth_hash: "<traefik_basic_auth_hash>"
 
 packages:
   - unzip

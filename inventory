@@ -1,5 +1,5 @@
 [homeserver]
-<server_ip>
+<server_name>
 
 [homeserver:vars]
 ansible_user = <username>
