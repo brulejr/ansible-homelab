@@ -17,7 +17,7 @@ pgid = "1000"
 private_key_path = "/home/sysadm/.ssh/rsa"
 
 # load configuration file defaults
-with open('config.yml', 'r') as stream:
+with open('../config.yml', 'r') as stream:
     config = yaml.safe_load(stream)
 server_name = config.get('server_name', server_name)
 username = config.get('username', username)
