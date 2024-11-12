@@ -13,7 +13,9 @@
     - name: Deploy docker apps
       ansible.builtin.include_tasks: "tasks/{{ item }}.yml"
       loop:
+        - traefik
         - portainer
+        - watchtower
 
     - name: Modify ownership of data and docker_apps directories
       ansible.builtin.include_tasks: tasks/add_ownership.yml
