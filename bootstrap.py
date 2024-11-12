@@ -25,7 +25,7 @@ puid = config.get('puid', puid)
 pgid = config.get('pgid', pgid)
 private_key_path = config.get('private_key_path', private_key_path)
 cloudflare_email = config.get('cloudflare_email')
-cloudflare_api_key = config.get('cloudflare_api_key')
+cloudflare_dns_token = config.get('cloudflare_dns_token')
 traefik_user_hash = config.get('traefik_user_hash')
 
 # Read user input
@@ -34,9 +34,9 @@ server_name = input(f"Enter server name [{server_name}]: ").strip() or server_na
 username = input(f"Enter username [{username}]: ").strip() or username
 puid = input(f"Enter puid for the user [{puid}]: ").strip() or puid
 pgid = input(f"Enter pgid for the user [{pgid}]: ").strip() or pgid
-cloudflare_email = input(f"Enter the Cloudflare email for traefik [{cloudflare_email}]: ") or cloudflare_email
-cloudflare_api_key = input(f"Enter the Cloudflare API key for traefik [{cloudflare_api_key}]: ") or cloudflare_api_key
-traefik_user_hash = input(f"Enter traefik dashboard user hash [{traefik_user_hash}]: ") or traefik_user_hash
+cloudflare_email = input(f"Enter the Cloudflare email [{cloudflare_email}]: ") or cloudflare_email
+cloudflare_dns_token = input(f"Enter the Cloudflare DNS Token [{cloudflare_dns_token}]: ") or cloudflare_dns_token
+traefik_user_hash = input(f"Enter Traefik dashboard user hash [{traefik_user_hash}]: ") or traefik_user_hash
  
 # Replace values in vars.yml file
 with open('group_vars/all/vars.yml', 'r') as f:
@@ -47,7 +47,7 @@ content = content.replace('<puid>', puid)
 content = content.replace('<pgid>', pgid)
 content = content.replace('<domain_name>', domain_name)
 content = content.replace('<cloudflare_email>', cloudflare_email)
-content = content.replace('<cloudflare_api_key>', cloudflare_api_key)
+content = content.replace('<cloudflare_dns_token>', cloudflare_dns_token)
 content = content.replace('<traefik_basic_auth_hash>', traefik_user_hash)
 with open('group_vars/all/vars.yml', 'w') as f:
     f.write(content)

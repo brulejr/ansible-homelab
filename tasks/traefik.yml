@@ -75,8 +75,7 @@
       - "{{ docker_dir }}/traefik/data/acme.json:/acme.json"
       - "{{ docker_dir }}/traefik/data/traefik.yml:/traefik.yml:ro"
     env:
-      CF_API_EMAIL: "{{ cloudflare_email }}"
-      CF_API_KEY: "{{ cloudflare_api_key }}"
+      CF_DNS_API_TOKEN: "{{ cloudflare_dns_token }}"
     labels:
       traefik.enable: "true"
       traefik.http.routers.traefik.entrypoints: "http"
