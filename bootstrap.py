@@ -34,9 +34,9 @@ server_name = input(f"Enter server name [{server_name}]: ").strip() or server_na
 username = input(f"Enter username [{username}]: ").strip() or username
 puid = input(f"Enter puid for the user [{puid}]: ").strip() or puid
 pgid = input(f"Enter pgid for the user [{pgid}]: ").strip() or pgid
-cloudflare_email = input("Enter the Cloudflare email for traefik [{cloudflare_email}]: ") or cloudflare_email
-cloudflare_api_key = input("Enter the Cloudflare API key for traefik [{cloudflare_api_key}]: ") or cloudflare_api_key
-traefik_user_hash = input("Enter traefik dashboard user hash [{traefik_user_hash}]: ") or traefik_user_hash
+cloudflare_email = input(f"Enter the Cloudflare email for traefik [{cloudflare_email}]: ") or cloudflare_email
+cloudflare_api_key = input(f"Enter the Cloudflare API key for traefik [{cloudflare_api_key}]: ") or cloudflare_api_key
+traefik_user_hash = input(f"Enter traefik dashboard user hash [{traefik_user_hash}]: ") or traefik_user_hash
  
 # Replace values in vars.yml file
 with open('group_vars/all/vars.yml', 'r') as f:
